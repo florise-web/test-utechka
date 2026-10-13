@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <!--fresh--><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
-<script>(function(){var V="20261004165611";function chk(){try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(t){t=(t||"").trim();if(!t||t===V)return;var k="fr_"+t;try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,1)}catch(e){}var u=new URL(location.href);u.searchParams.set("v",t);location.replace(u.toString())}).catch(function(){})}catch(e){}}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk()});window.addEventListener("pageshow",function(e){if(e.persisted)chk()})})();</script><!--/fresh-->
+<script>(function(){var V="20261013120000";function chk(){try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(t){t=(t||"").trim();if(!t||t===V)return;var k="fr_"+t;try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,1)}catch(e){}var u=new URL(location.href);u.searchParams.set("v",t);location.replace(u.toString())}).catch(function(){})}catch(e){}}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk()});window.addEventListener("pageshow",function(e){if(e.persisted)chk()})})();</script><!--/fresh-->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Куда утекают ваши деньги?</title>
 <meta name="description" content="16 утверждений и две минуты. Узнайте, через какую из пяти утечек уходят ваши деньги и что сделать уже сегодня вечером.">
@@ -138,7 +138,8 @@ details p{margin:8px 0 0;color:var(--mute)}
     <div class="card"><small>Что делать каждый день?</small><b>Подкаст и одна техника в день.</b> На задание нужно 5 или 10 минут.</div>
     <div class="card"><small>А это вообще работает?</small><b>638 500 ₽</b> насчитали участницы прошлого марафона. И это только те, кто прислал свои суммы.</div>
   </div>
-  <a class="btn pay" href="#">Принять участие · 1 490 ₽</a>
+  <a class="btn pay" href="#">Оплатить картой РФ · 1 490 ₽</a>
+  <a class="more payintl" href="#">Оплатить картой не РФ</a>
   <a class="more cta" href="#">Посмотреть программу и отзывы</a>
   
 
@@ -163,8 +164,9 @@ details p{margin:8px 0 0;color:var(--mute)}
     <p class="sub" style="margin-bottom:2px">Прошлый марафон принес участницам</p>
     <div class="sum">638 500 ₽</div>
     <div class="price">1 490 ₽</div>
-    <p class="sub" style="margin:6px 0 0">Это 213 ₽ за день. Цена действует до 12 октября, с 13 октября 1 990 ₽. Оплатившим до 9 октября Ирина дарит закрытый эфир «Денежная стратегия» 10 октября.</p>
-    <a class="btn pay" href="#">Принять участие · 1 490 ₽</a>
+    <p class="sub" style="margin:6px 0 0">Это 213 ₽ за день. Цена 1 490 ₽ действует до 14 октября, с 15 октября 1 990 ₽. Практикум идет с 19 по 25 октября, подготовка начинается сразу после оплаты.</p>
+    <a class="btn pay" href="#">Оплатить картой РФ · 1 490 ₽</a>
+  <a class="more payintl" href="#">Оплатить картой не РФ</a>
   <a class="more cta" href="#">Посмотреть программу и отзывы</a>
   </div>
 
@@ -175,7 +177,8 @@ details p{margin:8px 0 0;color:var(--mute)}
   <details><summary>Боюсь, что не доведу до конца</summary><p>Практикум короткий, семь дней, а материалы остаются еще на две недели. Можно догнать в своем темпе.</p></details>
   <details><summary>Если я не смогу на эфир вживую?</summary><p>Запись эфира останется в канале, посмотрите в удобное время.</p></details>
 
-  <a class="btn pay" href="#">Принять участие · 1 490 ₽</a>
+  <a class="btn pay" href="#">Оплатить картой РФ · 1 490 ₽</a>
+  <a class="more payintl" href="#">Оплатить картой не РФ</a>
   <a class="more cta" href="#">Посмотреть программу и отзывы</a>
   <p class="note">Это не диагностика и не диагноз. Это способ посмотреть на свои деньги со стороны.</p>
   <p style="text-align:center"><button class="link" id="again">Пройти заново</button></p>
@@ -183,7 +186,7 @@ details p{margin:8px 0 0;color:var(--mute)}
 </div>
 
 <script>
-var CONFIG={payUrl:"https://peoplenewtning.getplatinum.ru/payment/Zf0dOyv?utm_source=test_utechka",siteUrl:"https://florise-web.github.io/denezhnyj-marafon/?utm_source=test_utechka"};
+var CONFIG={payUrl:"https://peoplenewtning.getplatinum.ru/payment/Zf0dOyv?utm_source=test_utechka",payIntl:"https://t.me/c/4418670663/1/6045",siteUrl:"https://florise-web.github.io/denezhnyj-marafon/?utm_source=test_utechka"};
 var OPTS=[["Да, прямо про меня",3],["Часто",2],["Редко",1],["Нет, это не про меня",0]];
 var SCALES={A:"Доход держится на усталости",B:"Деньги не задерживаются",C:"Отдаете другим",D:"Прибавка возвращается назад",E:"Экономите на себе"};
 // s: шкала, q: утверждение, e: как оно звучит в результате, b: реплика Ирины перед вопросом
@@ -303,6 +306,8 @@ function result(){
     var c=document.querySelectorAll(p[0]);
     for(var k=0;k<c.length;k++){c[k].href=p[1]+"&utm_content="+top;c[k].onclick=function(e){if(tg&&tg.openLink){e.preventDefault();try{tg.openLink(this.href)}catch(err){location.href=this.href}}}}
   });
+  var pi=document.querySelectorAll(".payintl");
+  for(var q=0;q<pi.length;q++){pi[q].href=CONFIG.payIntl;pi[q].onclick=function(e){if(tg&&tg.openTelegramLink){e.preventDefault();try{tg.openTelegramLink(CONFIG.payIntl)}catch(err){location.href=CONFIG.payIntl}}};}
   show("s-res");
 }
 $("go").onclick=function(){i=0;ans=[];render();show("s-quiz")};
