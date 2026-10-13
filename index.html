@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <!--fresh--><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
-<script>(function(){var V="20261013120000";function chk(){try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(t){t=(t||"").trim();if(!t||t===V)return;var k="fr_"+t;try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,1)}catch(e){}var u=new URL(location.href);u.searchParams.set("v",t);location.replace(u.toString())}).catch(function(){})}catch(e){}}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk()});window.addEventListener("pageshow",function(e){if(e.persisted)chk()})})();</script><!--/fresh-->
+<script>(function(){var V="20261013193000";function chk(){try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(t){t=(t||"").trim();if(!t||t===V)return;var k="fr_"+t;try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,1)}catch(e){}var u=new URL(location.href);u.searchParams.set("v",t);location.replace(u.toString())}).catch(function(){})}catch(e){}}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk()});window.addEventListener("pageshow",function(e){if(e.persisted)chk()})})();</script><!--/fresh-->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Куда утекают ваши деньги?</title>
 <meta name="description" content="16 утверждений и две минуты. Узнайте, через какую из пяти утечек уходят ваши деньги и что сделать уже сегодня вечером.">
@@ -75,6 +75,10 @@ summary::-webkit-details-marker{display:none}
 summary:after{content:"+";float:right;color:var(--gold);font-weight:800}
 details[open] summary:after{content:"−"}
 details p{margin:8px 0 0;color:var(--mute)}
+.fin{margin-top:38px;padding:28px 20px 24px;border-radius:24px;background:linear-gradient(180deg,rgba(236,211,168,.14),rgba(194,38,63,.12));border:1px solid rgba(236,211,168,.38);box-shadow:0 18px 50px rgba(0,0,0,.38)}
+.fin h2{margin-top:0}
+.fin .price{color:#ECD3A8}
+.fin .btn{margin-top:18px}
 </style>
 </head>
 <body>
@@ -177,9 +181,17 @@ details p{margin:8px 0 0;color:var(--mute)}
   <details><summary>Боюсь, что не доведу до конца</summary><p>Практикум короткий, семь дней, а материалы остаются еще на две недели. Можно догнать в своем темпе.</p></details>
   <details><summary>Если я не смогу на эфир вживую?</summary><p>Запись эфира останется в канале, посмотрите в удобное время.</p></details>
 
-  <a class="btn pay" href="#">Оплатить картой РФ · 1 490 ₽</a>
-  <a class="more payintl" href="#">Оплатить картой не РФ</a>
-  <a class="more cta" href="#">Посмотреть программу и отзывы</a>
+  <div class="fin">
+    <h2 class="big">Утечка не закроется от того, что вы ее увидели</h2>
+    <p>Теперь у нее есть имя: <b id="f-name"></b>. Большинство живет с ней годами и объясняет себе это тем, что просто мало зарабатывает.</p>
+    <p>Держится она не на незнании, а на привычке. Сработает и на нынешнем доходе, и на вдвое большем. Сама не рассасывается.</p>
+    <p>Семь дней практикума собраны ровно про это. <b>Ваши дни по тесту: <span id="f-days"></span></b>, остальные закрывают то, что держит утечку рядом.</p>
+    <div class="price">1 490 ₽</div>
+    <p class="sub">До 14 октября, с 15 октября 1 990 ₽. Старт 19 октября, подготовка начинается сразу после оплаты.</p>
+    <a class="btn pay" href="#">Оплатить картой РФ · 1 490 ₽</a>
+    <a class="more payintl" href="#">Оплатить картой не РФ</a>
+    <a class="more cta" href="#">Посмотреть программу и отзывы</a>
+  </div>
   <p class="note">Это не диагностика и не диагноз. Это способ посмотреть на свои деньги со стороны.</p>
   <p style="text-align:center"><button class="link" id="again">Пройти заново</button></p>
 </section>
@@ -302,6 +314,8 @@ function result(){
   $("t-why").textContent=t.why;
   $("program").innerHTML=PROGRAM.map(function(p,k){
     return'<li'+(k===t.block?' class="me"':'')+'>'+(k===t.block?'<span class="tag">Самые важные для вас дни по тесту</span>':'')+'<div class="d">'+p[0]+'</div><b>'+p[1]+'</b>'+p[2]+'</li>'}).join("");
+  if($("f-name"))$("f-name").textContent="\u00ab"+t.name+"\u00bb";
+  if($("f-days"))$("f-days").textContent=PROGRAM[t.block][0];
   [[".cta",CONFIG.siteUrl],[".pay",CONFIG.payUrl]].forEach(function(p){
     var c=document.querySelectorAll(p[0]);
     for(var k=0;k<c.length;k++){c[k].href=p[1]+"&utm_content="+top;c[k].onclick=function(e){if(tg&&tg.openLink){e.preventDefault();try{tg.openLink(this.href)}catch(err){location.href=this.href}}}}
