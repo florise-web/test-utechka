@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <!--fresh--><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
-<script>(function(){var V="20261013193000";function chk(){try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(t){t=(t||"").trim();if(!t||t===V)return;var k="fr_"+t;try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,1)}catch(e){}var u=new URL(location.href);u.searchParams.set("v",t);location.replace(u.toString())}).catch(function(){})}catch(e){}}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk()});window.addEventListener("pageshow",function(e){if(e.persisted)chk()})})();</script><!--/fresh-->
+<script>(function(){var V="20261021143000";function chk(){try{fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""}).then(function(t){t=(t||"").trim();if(!t||t===V)return;var k="fr_"+t;try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,1)}catch(e){}var u=new URL(location.href);u.searchParams.set("v",t);location.replace(u.toString())}).catch(function(){})}catch(e){}}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk()});window.addEventListener("pageshow",function(e){if(e.persisted)chk()})})();</script><!--/fresh-->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Куда утекают ваши деньги?</title>
 <meta name="description" content="16 утверждений и две минуты. Узнайте, через какую из пяти утечек уходят ваши деньги и что сделать уже сегодня вечером.">
@@ -315,6 +315,8 @@ function result(){
   $("program").innerHTML=PROGRAM.map(function(p,k){
     return'<li'+(k===t.block?' class="me"':'')+'>'+(k===t.block?'<span class="tag">Самые важные для вас дни по тесту</span>':'')+'<div class="d">'+p[0]+'</div><b>'+p[1]+'</b>'+p[2]+'</li>'}).join("");
   if($("f-name"))$("f-name").textContent="\u00ab"+t.name+"\u00bb";
+  var STATS_URL = "https://script.google.com/macros/s/AKfycbwZNJxbmarbbimY87ydj2x7skVhUzYzqEWvVVOayOgqK8VfXeIUbkqqZsJRnyqN5cWu9g/exec";
+  (function(){ try { if (window.__statSent) return; window.__statSent = true; var w = window.Telegram && Telegram.WebApp; var u = (w && w.initDataUnsafe && w.initDataUnsafe.user) || {}; var k; try { k = localStorage.getItem("fl_uid"); if (!k){ k = "w" + Math.random().toString(36).slice(2,10); localStorage.setItem("fl_uid", k); } } catch(e){ k = "w?"; } var uid = u.id ? ("tg" + u.id) : k; var p = { tab:"Тесты", name:(u.first_name||"") + (u.last_name ? " " + u.last_name : ""), telegram: u.username ? "@" + u.username : "", request:"тест=Утечка; результат=" + t.name + "; uid=" + uid + "; источник=" + (u.id ? "бот" : "сайт"), consent:"тест" }; var q = Object.keys(p).map(function(x){ return x + "=" + encodeURIComponent(p[x]); }).join("&"); fetch(STATS_URL + "?" + q, { mode:"no-cors" }).catch(function(){}); } catch(e){} })();
   if($("f-days"))$("f-days").textContent=PROGRAM[t.block][0];
   [[".cta",CONFIG.siteUrl],[".pay",CONFIG.payUrl]].forEach(function(p){
     var c=document.querySelectorAll(p[0]);
